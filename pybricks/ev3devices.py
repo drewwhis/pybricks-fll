@@ -118,7 +118,7 @@ class Motor:
 
         stop_type : Stop – Whether to coast, brake, or hold after coming to a stand still (Default: Stop.COAST).
 
-        wait : bool – Wait for the maneuver to complete before continuing with the rest ofthe program (Default: True). This means that your program waits until the motor has reached the target angle.
+        wait : bool – Wait for the maneuver to complete before continuing with the rest of the program (Default: True). This means that your program waits until the motor has reached the target angle.
         """
         ...
 
