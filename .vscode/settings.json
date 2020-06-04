@@ -2,11 +2,18 @@
 	"cSpell.words": [
 		"BOING",
 		"DOKEY",
+		"ETIMEDOUT",
 		"Lojban",
 		"MINDSTORMS",
 		"OKEY",
 		"Runr",
+		"UART",
+		"cdevice",
+		"dcmotor",
+		"devsensor",
 		"pybricks",
+		"sysfs",
+		"uartdevice",
 		"whisperf",
 		"wmids"
 	]
