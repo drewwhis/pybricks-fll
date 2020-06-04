@@ -6,12 +6,12 @@ class StopWatch:
     def __init__(self):
         ...
 
-    def time(self) -> int:
+    def time(self) -> float:
         """
         Gets the current time of the stopwatch.
 
         Returns:
-            Elapsed time in milliseconds as an int.
+            Elapsed time in milliseconds as a float.
         """
         return 0
 
