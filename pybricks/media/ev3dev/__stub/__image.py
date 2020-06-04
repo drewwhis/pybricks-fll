@@ -1,30 +1,54 @@
-from pybricks.media.ev3dev import Font, Image
+from pybricks.media.ev3dev import Font
 from pybricks.parameters import Color
 from typing import Union
 
 
-class Screen:
+class Image:
     """
-    A stub class to represent the screen member of the EV3Brick class.
+    Object representing a graphics image. This can either be an in-memory copy of an image or the image displayed on a screen.
+
+    Args:
+        source (str or Image): The source of the image.
+        sub (bool): If sub is True, then the image object will act as a sub-image of the source image (this only works if the type of source is Image and not when it is a str).
 
     Attributes:
-        height (int): The height of the screen in pixels.
-        width (int): The width of the screen in pixels.
+        width: The width of this image in pixels.
+        height: The height of this image in pixels.
+
+    Note:
+        If source is a string, then the image will be loaded from the file path given by the string. Only .png files are supported. As a special case, if the string is _screen_, the image will be configured to draw directly on the screen.
+
+        If an Image is given, the new object will contain a copy of the source image object.
+
+        Additional keyword arguments x1, y1, x2, y2 are needed when sub=True. These specify the top-left and bottom-right coordinates in the source image that will be used as the bounds for the sub-image.
     """
 
-    def __init__(self):
-        self.width = 178
-        self.height = 128
+    def __init__(self, source: Union[Image, str], sub: bool = False, x1: int = None, y1: int = None, x2: int = None, y2: int = None):
+        self.width = 178  # type: int
+        self.height = 128  # type: int
 
-    def clear(self):
+    @staticmethod
+    def empty(width: int = 178, height: int = 128) -> Image:
         """
-        Clears the screen. All pixels on the screen will be set to Color.WHITE.
-        """
-        ...
+        Creates a new empty Image object.
 
-    def draw_text(self, x: int, y: int, text: str, text_color: Color = Color.BLACK, background_color: Color = None,):
+        Args:
+            width (int): The width of the image in pixels.
+            height (int): The height of the image in pixels.
+
+        Returns:
+            A new image with all pixels set to Color.WHITE.
+
+        Raises:
+            TypeError: width or height is not a number
+            ValueError: width or height is less than 1.
+            RuntimeError: There was a problem allocating a new image.
         """
-        Draws text on the screen.
+        return None
+
+    def draw_text(self, x: int, y: int, text: str, text_color: Color = Color.BLACK, background_color: Color = None):
+        """
+        Draws text on this image.
 
         The most recent font set using set_font() will be used or Font.DEFAULT if no font has been set yet.
 
@@ -39,13 +63,13 @@ class Screen:
 
     def print(self, *args, sep: str = "", end: str = "\n"):
         """
-        Prints a line of text on the screen.
+        Prints a line of text on this image.
 
-        This method works like the builtin print() function, but it writes on the screen instead.
+        This method works like the builtin print() function, but it writes on this image instead.
 
         You can set the font using set_font(). If no font has been set, Font.DEFAULT will be used. The text is always printed used black text with a white background.
 
-        Unlike the builtin print(), the text does not wrap if it is too wide to fit on the screen. It just gets cut off. But if the text would go off of the bottom of the screen, the entire image is scrolled up and the text is printed in the new blank area at the bottom of the screen.
+        Unlike the builtin print(), the text does not wrap if it is too wide to fit on this image. It just gets cut off. But if the text would go off of the bottom of this image, the entire image is scrolled up and the text is printed in the new blank area at the bottom of this image.
 
         Args:
             *args (object): Zero or more objects to print.
@@ -56,7 +80,7 @@ class Screen:
 
     def set_font(self, font: Font):
         """
-        Sets the font used for writing on the screen.
+        Sets the font used for writing on this image.
 
         The font is used for both draw_text() and print().
 
@@ -65,18 +89,9 @@ class Screen:
         """
         ...
 
-    def load_image(self, source: Union[str, Image]):
-        """
-        Clears this image, then draws the source image centered in the screen.
-
-        Args:
-            source (Image or str): The source Image. If the argument is a string, then the source image is loaded from file.
-        """
-        ...
-
     def draw_image(self, x: int, y: int, source: Union[str, Image], transparent: Color = None):
         """
-        Draws the source image on the screen.
+        Draws the source image on this image.
 
         Args:
             x (int): The x-axis value where the left side of the image will start.
@@ -88,7 +103,7 @@ class Screen:
 
     def draw_pixel(self, x: int, y: int, color: Color = Color.BLACK):
         """
-        Draws a single pixel on the screen.
+        Draws a single pixel on this image.
 
         Args:
             x (int): The x coordinate of the pixel.
@@ -99,7 +114,7 @@ class Screen:
 
     def draw_line(self, x1: int, y1: int, x2: int, y2: int, width: int = 1, color: Color = Color.BLACK):
         """
-        Draws a line on the screen.
+        Draws a line on this image.
 
         Args:
             x1 (int): The x coordinate of the starting point of the line.
@@ -113,7 +128,7 @@ class Screen:
 
     def draw_box(self, x1: int, y1: int, x2: int, y2: int, r: int = 0, fill: bool = False, color: Color = Color.BLACK):
         """
-        Draws a box on the screen.
+        Draws a box on this image.
 
         Args:
             x1 (int): The x coordinate of the left side of the box.
@@ -128,7 +143,7 @@ class Screen:
 
     def draw_circle(self, x: int, y: int, r: int, fill: bool = False, color: Color = Color.BLACK):
         """
-        Draws a circle on the screen.
+        Draws a circle on this image.
 
         Args:
             x (int): The x coordinate of the center of the circle.
@@ -139,15 +154,30 @@ class Screen:
         """
         ...
 
+    def clear(self):
+        """
+        Clears this image. All pixels on this image will be set to Color.WHITE.
+        """
+        ...
+
+    def load_image(self, source: Union[Image, str]):
+        """
+        Clears this image, then draws the source image centered in this image.
+
+        Args:
+            source (Image or str): The source Image. If the argument is a string, then the source image is loaded from file.
+        """
+        ...
+
     def save(self, filename: str):
         """
-        Saves the screen as a .png file.
+        Saves this image as a .png file.
 
         Args:
             filename (str): The path to the file to be saved.
 
         Raises:
-            TypeError: filename is not a string
+            TypeError: filename is not a string.
             OSError: There was a problem saving the file.
         """
         ...
