@@ -19,4 +19,4 @@ class TemperatureSensor:
         Returns:
             Measured temperature in degree Celsius.
         """
-        return None.
+        return None

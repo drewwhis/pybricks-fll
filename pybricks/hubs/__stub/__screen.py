@@ -13,8 +13,8 @@ class Screen:
     """
 
     def __init__(self):
-        self.width = 178
-        self.height = 128
+        self.width = 178  # type: int
+        self.height = 128  # type: int
 
     def clear(self):
         """

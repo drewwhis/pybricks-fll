@@ -1,6 +1,3 @@
-from typing import Tuple
-
-
 class Control:
     """
     Class to interact with PID controller and settings.
@@ -32,7 +29,7 @@ class Control:
         """
         return None
 
-    def limits(self, speed: float = None, acceleration: float = None, actuation: float = None) -> Tuple(float, float, float):
+    def limits(self, speed: float = None, acceleration: float = None, actuation: float = None) -> tuple:
         """
         Configures the maximum speed, acceleration, and actuation.
 
@@ -51,7 +48,7 @@ class Control:
         """
         return None
 
-    def pid(self, kp: int = None, ki: int = None, kd: int = None, integral_range: float = None, integral_rate: float = None, feed_forward: float = None) -> Tuple(int, int, int, float, float, float):
+    def pid(self, kp: int = None, ki: int = None, kd: int = None, integral_range: float = None, integral_rate: float = None, feed_forward: float = None) -> tuple:
         """
         Gets or sets the PID values for position and speed control.
 
@@ -73,7 +70,7 @@ class Control:
         """
         return None
 
-    def target_tolerances(self, speed: float = None, position: float = None) -> Tuple(float, float):
+    def target_tolerances(self, speed: float = None, position: float = None) -> tuple:
         """
         Gets or sets the tolerances that say when a maneuver is done.
 
@@ -91,7 +88,7 @@ class Control:
         """
         return None
 
-    def stall_tolerance(self, speed: float = None, time: float = None) -> Tuple(float, float):
+    def stall_tolerance(self, speed: float = None, time: float = None) -> tuple:
         """
         Gets or sets stalling tolerances.
 

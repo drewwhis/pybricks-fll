@@ -9,21 +9,18 @@ class Motor:
 
     Attributes:
         control (Control): The motor's PID control. 
+
+    Args:
+        port (Port): Port to which the motor is connected.
+        positive_direction (Direction): Which direction the motor should turn when you give a positive speed or angle.
+        gears (Union[List[int], List[List[int]]]): List of gears linked to the motor. For example, [12, 36] represents a gear train with a 12-tooth and a 36-tooth gear. Use a list of lists for multiple gear trains, such as [[12, 36], [20, 16, 40]].
+
+    Note:
+        When you specify a gear train, all motor commands and settings are automatically adjusted to account for the resulting gear ratio. The motor direction remains unchanged by this.
     """
 
     def __init__(self, port: Port, positive_direction: Direction = Direction.CLOCKWISE, gears: Union[List[int], List[List[int]]] = None):
-        """
-        Generic class to control motors with built-in rotation sensors.
-
-        Args:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should turn when you give a positive speed or angle.
-            gears (Union[List[int], List[List[int]]]): List of gears linked to the motor. For example, [12, 36] represents a gear train with a 12-tooth and a 36-tooth gear. Use a list of lists for multiple gear trains, such as [[12, 36], [20, 16, 40]].
-
-        Note:
-            When you specify a gear train, all motor commands and settings are automatically adjusted to account for the resulting gear ratio. The motor direction remains unchanged by this.
-        """
-        self.control = Control()
+        self.control = None  # type: Control
 
     def speed(self) -> float:
         """
@@ -32,7 +29,7 @@ class Motor:
         Returns:
             Motor speed in degrees/second.
         """
-        return 0
+        return None
 
     def angle(self) -> float:
         """
@@ -41,7 +38,7 @@ class Motor:
         Returns:
             Motor angle in degrees.
         """
-        return 0
+        return None
 
     def reset_angle(self, angle: float):
         """

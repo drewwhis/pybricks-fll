@@ -1,19 +1,16 @@
 from pybricks.parameters import Button, Port
-from typing import List, Tuple
+from typing import List
 
 
 class InfraredSensor:
     """
     LEGO® MINDSTORMS® EV3 Infrared Sensor and Beacon.
+
+    Args:
+        port (Port): Port to which the sensor is connected.
     """
 
     def __init__(self, port: Port):
-        """
-        LEGO® MINDSTORMS® EV3 Infrared Sensor and Beacon. 
-
-        Args:
-            port (Port): Port to which the sensor is connected.
-        """
         ...
 
     def distance(self) -> float:
@@ -23,9 +20,9 @@ class InfraredSensor:
         Returns:
             Relative distance ranging from 0 (closest) to 100 (farthest).
         """
-        return 0.0
+        return None
 
-    def beacon(self, channel: int) -> Tuple[float, float]:
+    def beacon(self, channel: int) -> tuple:
         """
         Measures the relative distance and angle between the remote and the infrared sensor.
 
@@ -35,7 +32,7 @@ class InfraredSensor:
         Returns:
             Tuple of relative distance (0 to 100) and approximate angle (-75 to 75 degrees) between remote and infrared sensor or (None,None) if no remote is detected.
         """
-        return (None, None)
+        return None
 
     def buttons(self, channel: int) -> List[Button]:
         """
@@ -49,7 +46,7 @@ class InfraredSensor:
         Returns:
             List of pressed buttons on the remote on the specified channel.
         """
-        return []
+        return None
 
     def keypad(self) -> List[Button]:
         """
@@ -62,3 +59,4 @@ class InfraredSensor:
         Returns:
             List of pressed buttons on the remote on selected channel.
         """
+        return None

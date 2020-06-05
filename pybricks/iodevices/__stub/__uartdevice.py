@@ -37,8 +37,7 @@ class UARTDevice:
         """
         return None
 
-
-    def write(self, data: bytes): 
+    def write(self, data: bytes):
         """
         Writes bytes.
 

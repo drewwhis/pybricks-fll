@@ -4,6 +4,7 @@ from .__light import Light
 from .__screen import Screen
 from .__speaker import Speaker
 
+
 class EV3Brick:
     """
     A class to represent a LEGO® MINDSTORMS® EV3 Brick.
@@ -17,11 +18,8 @@ class EV3Brick:
     """
 
     def __init__(self):
-        self.battery = Battery()
-        self.buttons = Buttons()
-        self.light = Light()
-        self.screen = Screen()
-        self.speaker = Speaker()
-
-    
-    
+        self.battery = None  # type: Battery
+        self.buttons = None  # type: Buttons
+        self.light = None  # type: Light
+        self.screen = None  # type: Screen
+        self.speaker = None  # type: Speaker

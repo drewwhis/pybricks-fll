@@ -1,35 +1,31 @@
 from pybricks.__stub.__control import Control
 from pybricks.ev3devices import Motor
-from typing import Tuple
 
 
 class DriveBase:
     """
-    Class representing a robotic vehicle with two powered wheels and optional wheel caster(s).
+    A robotic vehicle with two powered wheels and an optional support wheel or caster.
+
+    By specifying the dimensions of your robot, this class makes it easy to drive a given distance in millimeters or turn by a given number of degrees.
+
+    Positive distances and drive speeds mean driving forward. Negative means backward.
+
+    Positive angles and turn rates mean turning right. Negative means left. So when viewed from the top, positive means clockwise and negative means counterclockwise.
 
     Attributes:
         distance_control (Control): The traveled distance and drive speed are controlled by a PID controller. You can use this attribute to change its settings.
         heading_control (Control): The robot turn angle and turn rate are controlled by a PID controller. You can use this attribute to change its settings.
+
+    Args:
+        left_motor (Motor): The motor that drives the left wheel.
+        right_motor (Motor): The motor that drives the right wheel.
+        wheel_diameter (float): Diameter of the wheels in millimeters.
+        axle_track (float): Distance between the points where both wheels touch the ground in millimeters.
     """
 
     def __init__(self, left_motor: Motor, right_motor: Motor, wheel_diameter: float, axle_track: float):
-        """
-        A robotic vehicle with two powered wheels and an optional support wheel or caster.
-
-        By specifying the dimensions of your robot, this class makes it easy to drive a given distance in millimeters or turn by a given number of degrees.
-
-        Positive distances and drive speeds mean driving forward. Negative means backward.
-
-        Positive angles and turn rates mean turning right. Negative means left. So when viewed from the top, positive means clockwise and negative means counterclockwise.
-
-        Args:
-            left_motor (Motor): The motor that drives the left wheel.
-            right_motor (Motor): The motor that drives the right wheel.
-            wheel_diameter (float): Diameter of the wheels in millimeters.
-            axle_track (float): Distance between the points where both wheels touch the ground in millimeters.
-        """
-        self.distance_control = Control()
-        self.heading_control = Control()
+        self.distance_control = None  # type: Control
+        self.heading_control = None  # type: Control
 
     def straight(self, distance: float):
         """
@@ -88,7 +84,7 @@ class DriveBase:
         Returns:
             Driven distance since last reset in millimeters.
         """
-        return 0
+        return None
 
     def angle(self) -> float:
         """
@@ -97,9 +93,9 @@ class DriveBase:
         Returns:
             Accumulated angle since last reset in degrees.
         """
-        return 0
+        return None
 
-    def state(self) -> Tuple(float, float, float, float):
+    def state(self) -> tuple:
         """
         Gets the state of the robot.
 
@@ -108,7 +104,7 @@ class DriveBase:
         Returns:
             Distance (float) in millimeters, Drive Speed (float) in millimeters/second, Angle (float) in degrees, Rotational Speed (float) in degrees/second
         """
-        return (0, 0, 0, 0)
+        return None
 
     def reset(self):
         """

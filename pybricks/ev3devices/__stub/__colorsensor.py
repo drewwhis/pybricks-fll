@@ -1,19 +1,15 @@
 from pybricks.parameters import Color, Port
-from typing import Tuple
 
 
 class ColorSensor:
     """
     LEGO® MINDSTORMS® EV3 Color Sensor.
+
+    Args:
+        port (Port): Port to which the sensor is connected.
     """
 
     def __init__(self, port: Port):
-        """
-        LEGO® MINDSTORMS® EV3 Color Sensor.
-
-        Args:
-            port (Port): Port to which the sensor is connected.
-        """
         ...
 
     def color(self) -> Color:
@@ -32,7 +28,7 @@ class ColorSensor:
         Returns:
             Ambient light intensity, ranging from 0 (dark) to 100 (bright).
         """
-        return 0
+        return None
 
     def reflection(self) -> float:
         """
@@ -41,13 +37,13 @@ class ColorSensor:
         Returns:
             Reflection, ranging from 0 (no reflection) to 100 (high reflection).
         """
-        return 0
+        return None
 
-    def rgb(self) -> Tuple[float, float, float]:
+    def rgb(self) -> tuple:
         """
         Measures the reflection of a surface using a red, green, and then a blue light.
 
         Returns:
             Tuple of reflections for red, green, and blue light, each ranging from 0.0 (no reflection) to 100.0 (high reflection).
         """
-        return (0.0, 0.0, 0.0)
+        return None

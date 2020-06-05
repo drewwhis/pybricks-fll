@@ -14,7 +14,7 @@ class Battery:
         Voltage in mV, represented as a float.
         """
 
-        return 0
+        return None
 
     def current(self) -> float:
         """
@@ -24,4 +24,4 @@ class Battery:
         Battery current in mA, represented as a float.
         """
 
-        return 0
+        return None

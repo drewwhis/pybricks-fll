@@ -4,15 +4,13 @@ from pybricks.parameters import Port
 class UltrasonicSensor:
     """
     LEGO® MINDSTORMS® EV3 Ultrasonic Sensor.
+
+    Args:
+        port (Port): Port to which the sensor is connected.
     """
 
     def __init__(self, port: Port):
-        """
-        LEGO® MINDSTORMS® EV3 Ultrasonic Sensor.
 
-        Args:
-            port (Port): Port to which the sensor is connected.
-        """
         ...
 
     def distance(self, silent: bool = False) -> float:
@@ -25,7 +23,7 @@ class UltrasonicSensor:
         Returns:
             Distance in millimeters.
         """
-        return 0
+        return None
 
     def presence(self) -> bool:
         """
@@ -36,4 +34,4 @@ class UltrasonicSensor:
         Returns:
             True if ultrasonic sounds are detected, False if not.
         """
-        return False
+        return None

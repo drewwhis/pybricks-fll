@@ -19,7 +19,7 @@ class AnalogSensor:
         Returns:
             Analog voltage in millivolts.
         """
-        return 0.0
+        return None
 
     def resistance(self) -> float:
         """
