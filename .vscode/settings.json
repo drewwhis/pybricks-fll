@@ -11,6 +11,8 @@
 		"cdevice",
 		"dcmotor",
 		"devsensor",
+		"milliamps",
+		"milliwatts",
 		"pybricks",
 		"sysfs",
 		"uartdevice",
