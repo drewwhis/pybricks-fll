@@ -13,7 +13,7 @@ class UltrasonicSensor:
 
         ...
 
-    def distance(self, silent: bool = False) -> float:
+    def distance(self, silent: bool = False) -> int:
         """
         Measures the distance between the sensor and an object using ultrasonic sound waves.
 
