@@ -14,7 +14,7 @@ class Light:
         Turns on the light at the specified color.
 
         Args:
-            color (Color): Color of the light. The light turns off if you choose None or a color that is not available.
+            color (Color): Color of the light. The light turns off if you choose None or a color that is not available. The brick status light supports Color.RED, Color.ORANGE, and Color.GREEN.
         """
         ...
 

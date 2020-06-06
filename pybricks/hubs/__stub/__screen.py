@@ -1,4 +1,4 @@
-from pybricks.media.ev3dev import Font, Image
+from pybricks.media.ev3dev import Font, Image, ImageFile
 from pybricks.parameters import Color
 from typing import Union
 
@@ -65,23 +65,23 @@ class Screen:
         """
         ...
 
-    def load_image(self, source: Union[str, Image]):
+    def load_image(self, source: Union[str, Image, ImageFile]):
         """
         Clears this image, then draws the source image centered in the screen.
 
         Args:
-            source (Image or str): The source Image. If the argument is a string, then the source image is loaded from file.
+            source (ImageFile, Image, or str): The source Image. If the argument is a string (or ImageFile), then the source image is loaded from file.
         """
         ...
 
-    def draw_image(self, x: int, y: int, source: Union[str, Image], transparent: Color = None):
+    def draw_image(self, x: int, y: int, source: Union[str, Image, ImageFile], transparent: Color = None):
         """
         Draws the source image on the screen.
 
         Args:
             x (int): The x-axis value where the left side of the image will start.
             y (int): The y-axis value where the top of the image will start.
-            source (Image or str): The source Image. If the argument is a string, then the source image is loaded from file.
+            source (ImageFile, Image, str): The source Image. If the argument is a string (or ImageFile), then the source image is loaded from file.
             transparent (Color): The color of image to treat as transparent or None for no transparency.
         """
         ...

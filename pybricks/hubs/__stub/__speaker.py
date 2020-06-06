@@ -1,4 +1,5 @@
-from typing import Iterable
+from pybricks.media.ev3dev import SoundFile
+from typing import Iterable, Union
 
 
 class Speaker:
@@ -9,13 +10,13 @@ class Speaker:
     def __init__(self):
         ...
 
-    def beep(self, frequency: int = 500, duration: int = 100):
+    def beep(self, frequency: int = 500, duration: float = 100):
         """
         Play a beep/tone.
 
         Args:
             frequency (int): Frequency of the beep in Hertz. Frequencies below 100 are treated as 100.
-            duration (int): Duration of the beep in milliseconds. If the duration is less than 0, then the method returns immediately, and the frequency play continues to play indefinitely.
+            duration (float): Duration of the beep in milliseconds. If the duration is less than 0, then the method returns immediately, and the frequency play continues to play indefinitely.
         """
         ...
 
@@ -41,12 +42,12 @@ class Speaker:
         """
         ...
 
-    def play_file(self, file_name: str):
+    def play_file(self, file_name: Union(str, SoundFile)):
         """
         Plays a sound file.
 
         Args:
-            file_name (str): Path to the sound file, including the file extension.
+            file_name (str or SoundFile): Path to the sound file, including the file extension.
         """
         ...
 
@@ -66,7 +67,7 @@ class Speaker:
         Configures speech settings used by the say() method.
 
         Any options that is set to None will not be changed. If an option is set to an invalid value say() will use the default value instead.
-
+        
         Args:
             language (str): Language of the text. For example, you can choose 'en' (English) or 'de' (German). A list of all available languages is given below.
             voice (str): The voice to use. For example, you can choose 'f1' (female voice variant 1) or 'm3' (male voice variant 3). A list of all available voices is given below.

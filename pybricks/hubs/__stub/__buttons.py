@@ -1,5 +1,6 @@
-from typing import List
 from pybricks.parameters import Button
+from typing import List
+
 
 class Buttons:
     """
@@ -16,5 +17,4 @@ class Buttons:
         Returns:
         List of pressed buttons.
         """
-
         return None

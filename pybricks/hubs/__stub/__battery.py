@@ -6,22 +6,22 @@ class Battery:
     def __init__(self):
         ...
 
-    def voltage(self) -> float:
+    def voltage(self) -> int:
         """
         Gets the voltage of the battery.
 
         Returns:
-        Voltage in mV, represented as a float.
+        Voltage in mV.
         """
 
         return None
 
-    def current(self) -> float:
+    def current(self) -> int:
         """
         Gets the current supplied by the battery.
 
         Returns:
-        Battery current in mA, represented as a float.
+        Battery current in mA.
         """
 
         return None
