@@ -1,5 +1,6 @@
 from pybricks.parameters import Color, Port
 from .__light import Light
+from typing import Tuple
 
 
 class ColorSensor:
@@ -25,7 +26,7 @@ class ColorSensor:
         """
         return None
 
-    def ambient(self) -> float:
+    def ambient(self) -> int:
         """
         Measures the ambient light intensity.
 
@@ -34,7 +35,7 @@ class ColorSensor:
         """
         return None
 
-    def reflection(self) -> float:
+    def reflection(self) -> int:
         """
         Measures the reflection of a surface.
 
@@ -43,11 +44,11 @@ class ColorSensor:
         """
         return None
 
-    def rgb(self) -> tuple:
+    def rgb(self) -> Tuple[int, int, int]:
         """
         Measures the reflection of a surface using a red, green, and then a blue light.
 
         Returns:
-            Tuple of reflections for red, green, and blue light, each ranging from 0.0 (no reflection) to 100.0 (high reflection).
+            Tuple of reflections for red, green, and blue light, each ranging from 0 (no reflection) to 100 (high reflection).
         """
         return None

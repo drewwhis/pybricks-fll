@@ -13,7 +13,7 @@ class GyroSensor:
     def __init__(self, port: Port, direction: Direction = Direction.CLOCKWISE):
         ...
 
-    def speed(self) -> float:
+    def speed(self) -> int:
         """
         Gets the speed (angular velocity) of the sensor.
 
@@ -22,7 +22,7 @@ class GyroSensor:
         """
         return None
 
-    def angle(self) -> float:
+    def angle(self) -> int:
         """
         Gets the accumulated angle of the sensor.
 
@@ -31,11 +31,11 @@ class GyroSensor:
         """
         return None
 
-    def reset_angle(self, angle: float):
+    def reset_angle(self, angle: int):
         """
         Sets the rotation angle of the sensor to a desired value.
 
         Args:
-            angle (float): Value to which the angle should be reset in degrees.
+            angle (int): Value to which the angle should be reset in degrees.
         """
         ...
