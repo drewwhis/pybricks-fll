@@ -20,7 +20,7 @@ class Motor:
     """
 
     def __init__(self, port: Port, positive_direction: Direction = Direction.CLOCKWISE, gears: Union[List[int], List[List[int]]] = None):
-        self.control = None  # type: Control
+        self.control = Control()  # type: Control
 
     def speed(self) -> int:
         """

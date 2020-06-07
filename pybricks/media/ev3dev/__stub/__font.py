@@ -24,10 +24,10 @@ class Font:
     DEFAULT = None  # type: Font
 
     def __init__(self, family: str = None, size: int = 12, bold: bool = False, monospace: bool = False, lang: str = None, script: str = None):
-        self.family = None  # type: str
-        self.style = None  # type: str
-        self.width = None  # type: int
-        self.height = None  # type: int
+        self.family = ''  # type: str
+        self.style = ''  # type: str
+        self.width = 0  # type: int
+        self.height = 0  # type: int
 
     def text_width(self, text: str) -> int:
         """
@@ -48,3 +48,5 @@ class Font:
         """
 
         return 0
+
+Font.DEFAULT = Font()

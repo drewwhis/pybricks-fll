@@ -25,8 +25,8 @@ class DriveBase:
     """
 
     def __init__(self, left_motor: Motor, right_motor: Motor, wheel_diameter: int, axle_track: int):
-        self.distance_control = None  # type: Control
-        self.heading_control = None  # type: Control
+        self.distance_control = Control()  # type: Control
+        self.heading_control = Control()  # type: Control
 
     def straight(self, distance: int):
         """

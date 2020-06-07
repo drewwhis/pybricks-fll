@@ -16,7 +16,7 @@ class Control:
         Returns:
             True if the command is done, False if not.
         """
-        return None
+        return False
 
     def stalled(self) -> bool:
         """
@@ -27,7 +27,7 @@ class Control:
         Returns:
             True if the controller is stalled, False if not.
         """
-        return None
+        return False
 
     def limits(self, speed: float = None, acceleration: float = None, actuation: float = None) -> tuple:
         """

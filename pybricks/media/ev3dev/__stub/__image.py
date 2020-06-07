@@ -1,4 +1,4 @@
-from pybricks.media.ev3dev import Font
+from pybricks.media.ev3dev import Font, ImageFile
 from pybricks.parameters import Color
 from typing import Union
 
@@ -8,22 +8,22 @@ class Image:
     Object representing a graphics image. This can either be an in-memory copy of an image or the image displayed on a screen.
 
     Args:
-        source (str or Image): The source of the image.
-        sub (bool): If sub is True, then the image object will act as a sub-image of the source image (this only works if the type of source is Image and not when it is a str).
+        source (str, Image, or ImageFile): The source of the image.
+        sub (bool): If sub is True, then the image object will act as a sub-image of the source image (this only works if the type of source is Image and not when it is a str or ImageFile).
 
     Attributes:
         width: The width of this image in pixels.
         height: The height of this image in pixels.
 
     Note:
-        If source is a string, then the image will be loaded from the file path given by the string. Only .png files are supported. As a special case, if the string is _screen_, the image will be configured to draw directly on the screen.
+        If source is a string or ImageFile, then the image will be loaded from the file path given by the string. Only .png files are supported. As a special case, if the string is '_screen_', the image will be configured to draw directly on the screen.
 
         If an Image is given, the new object will contain a copy of the source image object.
 
         Additional keyword arguments x1, y1, x2, y2 are needed when sub=True. These specify the top-left and bottom-right coordinates in the source image that will be used as the bounds for the sub-image.
     """
 
-    def __init__(self, source: Union['Image', str], sub: bool = False, x1: int = None, y1: int = None, x2: int = None, y2: int = None):
+    def __init__(self, source: Union['Image', str, ImageFile], *, sub: bool = False, x1: int = None, y1: int = None, x2: int = None, y2: int = None):
         self.width = 178  # type: int
         self.height = 128  # type: int
 
@@ -89,14 +89,14 @@ class Image:
         """
         ...
 
-    def draw_image(self, x: int, y: int, source: Union[str, 'Image'], transparent: Color = None):
+    def draw_image(self, x: int, y: int, source: Union[str, 'Image', ImageFile], transparent: Color = None):
         """
         Draws the source image on this image.
 
         Args:
             x (int): The x-axis value where the left side of the image will start.
             y (int): The y-axis value where the top of the image will start.
-            source (Image or str): The source Image. If the argument is a string, then the source image is loaded from file.
+            source (Image, ImageFile, or str): The source Image. If the argument is a string, then the source image is loaded from file.
             transparent (Color): The color of image to treat as transparent or None for no transparency.
         """
         ...

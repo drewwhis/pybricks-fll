@@ -18,8 +18,8 @@ class EV3Brick:
     """
 
     def __init__(self):
-        self.battery = None  # type: Battery
-        self.buttons = None  # type: Buttons
-        self.light = None  # type: Light
-        self.screen = None  # type: Screen
-        self.speaker = None  # type: Speaker
+        self.battery = Battery()  # type: Battery
+        self.buttons = Buttons()  # type: Buttons
+        self.light = Light()  # type: Light
+        self.screen = Screen()  # type: Screen
+        self.speaker = Speaker()  # type: Speaker
