@@ -46,7 +46,7 @@ class DriveBase:
         """
         ...
 
-    def settings(self, straight_speed: int, straight_acceleration: int, turn_rate: int, turn_acceleration: int):
+    def settings(self, straight_speed: int = None, straight_acceleration: int = None, turn_rate: int = None, turn_acceleration: int = None) -> Tuple[int, int, int, int]:
         """
         Configures the speed and acceleration used by straight() and turn().
 
@@ -59,8 +59,14 @@ class DriveBase:
             straight_acceleration (int): Acceleration and deceleration of the robot at the start and end of straight() in millimeters/second^2.
             turn_rate (int): Turn rate of the robot during turn() in degrees/second.
             turn_acceleration (int): Angular acceleration and deceleration of the robot at the start and end of turn() in degrees/second^2.
+
+        Returns:
+            Straight speed (millimeters/second), straight acceleration (millimeters/second^2), turn rate (degrees/second), and turn acceleration (degrees/second^2) (if no arguments are provided), None otherwise.
         """
-        ...
+        if straight_speed is None and straight_acceleration is None and turn_rate is None and turn_acceleration is None:
+            return (0, 0, 0, 0)
+        else:
+            return None
 
     def drive(self, drive_speed: int, turn_rate: int):
         """
