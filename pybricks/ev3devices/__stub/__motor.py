@@ -143,7 +143,7 @@ class Motor:
         This method lets you use a motor just like a simple DC motor.
 
         Args:
-            duty (int): The duty cycle as a percentage (-100.0 to 100).
+            duty (int): The duty cycle as a percentage (-100 to 100).
         """
         ...
 
