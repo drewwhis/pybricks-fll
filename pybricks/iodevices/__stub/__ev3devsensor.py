@@ -27,4 +27,4 @@ class Ev3devSensor:
         Returns:
             Values read from the sensor.
         """
-        return None
+        return ()

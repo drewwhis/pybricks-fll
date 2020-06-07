@@ -20,7 +20,7 @@ class GyroSensor:
         Returns:
             Sensor angular velocity in degrees/second.
         """
-        return None
+        return 0
 
     def angle(self) -> int:
         """
@@ -29,7 +29,7 @@ class GyroSensor:
         Returns:
             Rotation angle in degrees.
         """
-        return None
+        return 0
 
     def reset_angle(self, angle: int):
         """

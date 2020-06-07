@@ -21,7 +21,7 @@ class TextMailbox:
         Returns:
             The current value or None if the mailbox is empty.
         """
-        return None
+        return ''
 
     def send(self, value: str, brick: str):
         """
@@ -43,7 +43,7 @@ class TextMailbox:
         Returns:
             The new value.
         """
-        return None
+        return ''
 
     def wait(self):
         """

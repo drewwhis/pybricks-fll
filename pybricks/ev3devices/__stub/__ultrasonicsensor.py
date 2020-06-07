@@ -23,7 +23,7 @@ class UltrasonicSensor:
         Returns:
             Distance in millimeters.
         """
-        return None
+        return 0
 
     def presence(self) -> bool:
         """
@@ -34,4 +34,4 @@ class UltrasonicSensor:
         Returns:
             True if ultrasonic sounds are detected, False if not.
         """
-        return None
+        return False

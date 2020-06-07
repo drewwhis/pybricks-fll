@@ -12,7 +12,7 @@ class SoundSensor:
     def __init__(self, port: Port):
         ...
 
-    def intensity(self, audible_only: bool = True) -> float:
+    def intensity(self, audible_only: bool = True) -> int:
         """
         Measures the ambient sound intensity (loudness).
 
@@ -22,4 +22,4 @@ class SoundSensor:
         Returns:
             Sound intensity as a percentage (0 to 100).
         """
-        return None
+        return False

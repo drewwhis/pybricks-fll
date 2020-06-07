@@ -19,4 +19,4 @@ class UltrasonicSensor:
         Returns:
             Distance in millimeters.
         """
-        return None
+        return 0

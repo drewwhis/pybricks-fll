@@ -1,5 +1,6 @@
 from pybricks.__stub.__control import Control
 from pybricks.ev3devices import Motor
+from typing import Tuple
 
 
 class DriveBase:
@@ -19,33 +20,33 @@ class DriveBase:
     Args:
         left_motor (Motor): The motor that drives the left wheel.
         right_motor (Motor): The motor that drives the right wheel.
-        wheel_diameter (float): Diameter of the wheels in millimeters.
-        axle_track (float): Distance between the points where both wheels touch the ground in millimeters.
+        wheel_diameter (int): Diameter of the wheels in millimeters.
+        axle_track (int): Distance between the points where both wheels touch the ground in millimeters.
     """
 
-    def __init__(self, left_motor: Motor, right_motor: Motor, wheel_diameter: float, axle_track: float):
+    def __init__(self, left_motor: Motor, right_motor: Motor, wheel_diameter: int, axle_track: int):
         self.distance_control = None  # type: Control
         self.heading_control = None  # type: Control
 
-    def straight(self, distance: float):
+    def straight(self, distance: int):
         """
         Drives straight for a given distance then stops.
 
         Args:
-            distance (float): Distance to travel in millimeters.
+            distance (int): Distance to travel in millimeters.
         """
         ...
 
-    def turn(self, angle: float):
+    def turn(self, angle: int):
         """
         Turns in place by a given angle then stops.
 
         Args:
-            angle (float): Angle of the turn in degrees.
+            angle (int): Angle of the turn in degrees.
         """
         ...
 
-    def settings(self, straight_speed: float, straight_acceleration: float, turn_rate: float, turn_acceleration: float):
+    def settings(self, straight_speed: int, straight_acceleration: int, turn_rate: int, turn_acceleration: int):
         """
         Configures the speed and acceleration used by straight() and turn().
 
@@ -54,20 +55,20 @@ class DriveBase:
         You can only change the settings while the robot is stopped. This is either before you begin driving or after you call stop().
 
         Args:
-            straight_speed (float):  Speed of the robot during straight() in millimeters/second.
-            straight_acceleration (float): Acceleration and deceleration of the robot at the start and end of straight() in millimeters/second^2.
-            turn_rate (float): Turn rate of the robot during turn() in degrees/second.
-            turn_acceleration (float): Angular acceleration and deceleration of the robot at the start and end of turn() in degrees/second^2.
+            straight_speed (int):  Speed of the robot during straight() in millimeters/second.
+            straight_acceleration (int): Acceleration and deceleration of the robot at the start and end of straight() in millimeters/second^2.
+            turn_rate (int): Turn rate of the robot during turn() in degrees/second.
+            turn_acceleration (int): Angular acceleration and deceleration of the robot at the start and end of turn() in degrees/second^2.
         """
         ...
 
-    def drive(self, drive_speed: float, turn_rate: float):
+    def drive(self, drive_speed: int, turn_rate: int):
         """
         Start driving at the specified speed and turnrate. Both values are measured at the center point between the wheels of the robot.
 
         Args:
-            drive_speed (float): Speed of the robot in millimeters/second.
-            turn_rate (float): Turn rate of the robot in degrees/second.
+            drive_speed (int): Speed of the robot in millimeters/second.
+            turn_rate (int): Turn rate of the robot in degrees/second.
         """
         ...
 
@@ -77,34 +78,34 @@ class DriveBase:
         """
         ...
 
-    def distance(self) -> float:
+    def distance(self) -> int:
         """
         Get the estimated driven distance.
 
         Returns:
             Driven distance since last reset in millimeters.
         """
-        return None
+        return 0
 
-    def angle(self) -> float:
+    def angle(self) -> int:
         """
         Get the estimated rotation angle of the drive base.
 
         Returns:
             Accumulated angle since last reset in degrees.
         """
-        return None
+        return 0
 
-    def state(self) -> tuple:
+    def state(self) -> Tuple[int, int, int, int]:
         """
         Gets the state of the robot.
 
         This returns the current distance(), the drive speed, the angle(), and the turn rate.
 
         Returns:
-            Distance (float) in millimeters, Drive Speed (float) in millimeters/second, Angle (float) in degrees, Rotational Speed (float) in degrees/second
+            Distance in millimeters, Drive Speed in millimeters/second, Angle in degrees, Rotational Speed in degrees/second
         """
-        return None
+        return (0, 0, 0, 0)
 
     def reset(self):
         """

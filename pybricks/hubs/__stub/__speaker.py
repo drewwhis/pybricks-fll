@@ -10,13 +10,13 @@ class Speaker:
     def __init__(self):
         ...
 
-    def beep(self, frequency: int = 500, duration: float = 100):
+    def beep(self, frequency: int = 500, duration: int = 100):
         """
         Play a beep/tone.
 
         Args:
             frequency (int): Frequency of the beep in Hertz. Frequencies below 100 are treated as 100.
-            duration (float): Duration of the beep in milliseconds. If the duration is less than 0, then the method returns immediately, and the frequency play continues to play indefinitely.
+            duration (int): Duration of the beep in milliseconds. If the duration is less than 0, then the method returns immediately, and the frequency play continues to play indefinitely.
         """
         ...
 
@@ -42,7 +42,7 @@ class Speaker:
         """
         ...
 
-    def play_file(self, file_name: Union(str, SoundFile)):
+    def play_file(self, file_name: Union[str, SoundFile]):
         """
         Plays a sound file.
 

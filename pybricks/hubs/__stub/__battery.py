@@ -13,8 +13,7 @@ class Battery:
         Returns:
         Voltage in mV.
         """
-
-        return None
+        return 0
 
     def current(self) -> int:
         """
@@ -23,5 +22,4 @@ class Battery:
         Returns:
         Battery current in mA.
         """
-
-        return None
+        return 0

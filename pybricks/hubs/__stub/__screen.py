@@ -22,7 +22,7 @@ class Screen:
         """
         ...
 
-    def draw_text(self, x: int, y: int, text: str, text_color: Color = Color.BLACK, background_color: Color = None,):
+    def draw_text(self, x: int, y: int, text: str, text_color: Color = Color.BLACK, background_color: Color = None):
         """
         Draws text on the screen.
 

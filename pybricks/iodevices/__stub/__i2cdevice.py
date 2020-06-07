@@ -24,7 +24,7 @@ class I2CDevice:
         Returns:	
             Bytes returned from the device.
         """
-        return None
+        return bytes.fromhex('00')
 
     def write(self, reg: int, data: bytes = None):
         """

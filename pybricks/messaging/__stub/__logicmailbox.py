@@ -21,7 +21,7 @@ class LogicMailbox:
         Returns:
             The current value or None if the mailbox is empty.
         """
-        return None
+        return False
 
     def send(self, value: bool, brick: str):
         """
@@ -43,7 +43,7 @@ class LogicMailbox:
         Returns:
             The new value.
         """
-        return None
+        return False
 
     def wait(self):
         """

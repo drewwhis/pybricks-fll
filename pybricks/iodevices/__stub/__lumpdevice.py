@@ -22,7 +22,7 @@ class LUMPDevice:
         Returns:
             Values read from the sensor.
         """
-        return None
+        return ()
 
     def write(self, mode: int, data: tuple):
         """

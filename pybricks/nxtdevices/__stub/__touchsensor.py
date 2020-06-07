@@ -19,4 +19,4 @@ class TouchSensor:
         Returns:
             True if the sensor is pressed, False if it is not pressed.
         """
-        return None
+        return False

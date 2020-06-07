@@ -12,16 +12,16 @@ class AnalogSensor:
     def __init__(self, port: Port):
         ...
 
-    def voltage(self) -> float:
+    def voltage(self) -> int:
         """
         Measures analog voltage.
 
         Returns:
             Analog voltage in millivolts.
         """
-        return None
+        return 0
 
-    def resistance(self) -> float:
+    def resistance(self) -> int:
         """
         Measures resistance.
 
@@ -30,6 +30,7 @@ class AnalogSensor:
         Returns:
             Resistance of the analog device in ohms.
         """
+        return 0
 
     def active(self):
         """

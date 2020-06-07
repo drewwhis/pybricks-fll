@@ -12,20 +12,20 @@ class LightSensor:
     def __init__(self, port: Port):
         ...
 
-    def ambient(self) -> float:
+    def ambient(self) -> int:
         """
         Measures the ambient light intensity.
 
         Returns:
             Ambient light intensity, ranging from 0 (dark) to 100 (bright).
         """
-        return None
+        return 0
 
-    def reflection(self) -> float:
+    def reflection(self) -> int:
         """
         Measures the reflection of a surface using a red light.
 
         Returns:
             Reflection, ranging from 0 (no reflection) to 100 (high reflection).
         """
-        return None
+        return 0

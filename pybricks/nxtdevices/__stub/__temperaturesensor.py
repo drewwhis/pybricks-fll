@@ -12,11 +12,11 @@ class TemperatureSensor:
     def __init__(self, port: Port):
         ...
 
-    def temperature(self) -> float:
+    def temperature(self) -> int:
         """
         Measures the temperature.
 
         Returns:
             Measured temperature in degree Celsius.
         """
-        return None
+        return 0

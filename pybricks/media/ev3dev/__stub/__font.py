@@ -37,7 +37,7 @@ class Font:
             The width in pixels.
         """
 
-        return None
+        return 0
 
     def text_height(self, text: str) -> int:
         """
@@ -47,4 +47,4 @@ class Font:
             The height in pixels.
         """
 
-        return None
+        return 0

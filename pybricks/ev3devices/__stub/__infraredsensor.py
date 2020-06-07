@@ -1,5 +1,5 @@
 from pybricks.parameters import Button, Port
-from typing import List
+from typing import List, Tuple
 
 
 class InfraredSensor:
@@ -13,16 +13,16 @@ class InfraredSensor:
     def __init__(self, port: Port):
         ...
 
-    def distance(self) -> float:
+    def distance(self) -> int:
         """
         Measures the relative distance between the sensor and an object using infrared light.
 
         Returns:
             Relative distance ranging from 0 (closest) to 100 (farthest).
         """
-        return None
+        return 0
 
-    def beacon(self, channel: int) -> tuple:
+    def beacon(self, channel: int) -> Tuple[int, int]:
         """
         Measures the relative distance and angle between the remote and the infrared sensor.
 
@@ -32,7 +32,7 @@ class InfraredSensor:
         Returns:
             Tuple of relative distance (0 to 100) and approximate angle (-75 to 75 degrees) between remote and infrared sensor or (None,None) if no remote is detected.
         """
-        return None
+        return (0, 0)
 
     def buttons(self, channel: int) -> List[Button]:
         """
@@ -46,7 +46,7 @@ class InfraredSensor:
         Returns:
             List of pressed buttons on the remote on the specified channel.
         """
-        return None
+        return []
 
     def keypad(self) -> List[Button]:
         """
@@ -59,4 +59,4 @@ class InfraredSensor:
         Returns:
             List of pressed buttons on the remote on selected channel.
         """
-        return None
+        return []

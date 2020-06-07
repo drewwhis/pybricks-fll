@@ -24,7 +24,7 @@ class NumericMailbox:
         Returns:
             The current value or None if the mailbox is empty.
         """
-        return None
+        return 0
 
     def send(self, value: Union[int, float], brick: str):
         """
@@ -46,7 +46,7 @@ class NumericMailbox:
         Returns:
             The new value.
         """
-        return None
+        return 0
 
     def wait(self):
         """

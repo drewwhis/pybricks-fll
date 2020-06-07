@@ -8,10 +8,10 @@ class UARTDevice:
     Args:
         port (Port): Port to which the device is connected.
         baudrate (int): Baudrate of the UART device.
-        timeout (float): How long to wait during read() before giving up in milliseconds. If you choose None, it will wait forever.
+        timeout (int): How long to wait during read() before giving up in milliseconds. If you choose None, it will wait forever.
     """
 
-    def __init__(self, port: Port, baudrate: int, timeout: float):
+    def __init__(self, port: Port, baudrate: int, timeout: int):
         ...
 
     def read(self, length: int = 1) -> bytes:
@@ -26,7 +26,7 @@ class UARTDevice:
         Returns:
             Bytes returned from the device.
         """
-        return None
+        return bytes.fromhex('00')
 
     def read_all(self) -> bytes:
         """
@@ -35,7 +35,7 @@ class UARTDevice:
         Returns:
             Bytes returned from the device.
         """
-        return None
+        return bytes.fromhex('00')
 
     def write(self, data: bytes):
         """
@@ -53,7 +53,7 @@ class UARTDevice:
         Returns:
             Number of bytes in the buffer.
         """
-        ...
+        return 0
 
     def clear(self):
         """

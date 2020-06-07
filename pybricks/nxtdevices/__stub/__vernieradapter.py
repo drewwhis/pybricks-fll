@@ -14,34 +14,34 @@ class VernierAdapter:
     def __init__(self, port: Port, conversion: Callable = None):
         ...
 
-    def voltage(self) -> float:
+    def voltage(self) -> int:
         """
         Measures the raw analog sensor voltage.
 
         Returns:
             Analog voltage in millivolts.
         """
-        return None
+        return 0
 
-    def conversion(self, voltage: float) -> float:
+    def conversion(self, voltage: int) -> int:
         """
         Converts the raw voltage (mV) to a sensor value.
 
         If you did not provide a conversion function earlier, no conversion will be applied.
 
         Args:
-            voltage (float): Analog sensor voltage in millivolts.
+            voltage (int): Analog sensor voltage in millivolts.
 
         Returns:
             Converted sensor value.
         """
-        return None
+        return 0
 
-    def value(self) -> float:
+    def value(self) -> int:
         """
         Measures the sensor voltage() and then applies your conversion() to give you the sensor value.
 
         Returns:
             Converted sensor value.
         """
-        return None
+        return 0

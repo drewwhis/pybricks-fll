@@ -29,7 +29,7 @@ class ColorSensor:
         Returns:
             Ambient light intensity, ranging from 0 (dark) to 100 (bright).
         """
-        return None
+        return 0
 
     def reflection(self) -> int:
         """
@@ -38,7 +38,7 @@ class ColorSensor:
         Returns:
             Reflection, ranging from 0 (no reflection) to 100 (high reflection).
         """
-        return None
+        return 0
 
     def rgb(self) -> Tuple[int, int, int]:
         """
@@ -47,4 +47,4 @@ class ColorSensor:
         Returns:
             Tuple of reflections for red, green, and blue light, each ranging from 0 (no reflection) to 100 (high reflection).
         """
-        return None
+        return (0, 0, 0)

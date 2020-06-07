@@ -13,12 +13,12 @@ class DCMotor:
     def __init__(self, port: Port, positive_direction: Direction = Direction.CLOCKWISE):
         ...
 
-    def dc(self, duty: float):
+    def dc(self, duty: int):
         """
         Rotates the motor at a given duty cycle (also known as “power”).
 
         Args:
-            duty (float): The duty cycle as a percentage (-100.0 to 100).
+            duty (int): The duty cycle as a percentage (-100 to 100).
         """
         ...
 

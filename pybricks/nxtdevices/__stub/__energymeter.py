@@ -1,4 +1,5 @@
 from pybricks.parameters import Port
+from typing import Tuple
 
 
 class EnergyMeter:
@@ -12,29 +13,29 @@ class EnergyMeter:
     def __init__(self, port: Port):
         ...
 
-    def storage(self) -> float:
+    def storage(self) -> int:
         """
         Gets the total available energy stored in the battery.
 
         Returns:
             Remaining stored energy in joules.
         """
-        return None
+        return 0
 
-    def input(self) -> tuple:
+    def input(self) -> Tuple[int, int, int]:
         """
         Measures the electrical signals at the input (bottom) side of the energy meter. It measures the voltage applied to it and the current passing through it. The product of these two values is power. This power value is the rate at which the stored energy increases. This power is supplied by an energy source such as the provided solar panel or an externally driven motor.
 
         Returns:	
             Voltage (millivolts), current (milliamps), and power (milliwatts) measured at the input port.
         """
-        return None
+        return (0, 0, 0)
 
-    def output(self) -> tuple:
+    def output(self) -> Tuple[int, int, int]:
         """
         Measures the electrical signals at the output (top) side of the energy meter. It measures the voltage applied to the external load and the current passing to it. The product of these two values is power. This power value is the rate at which the stored energy decreases. This power is consumed by the load, such as a light or a motor.
 
         Returns:
             Voltage (millivolts), current (milliamps), and power (milliwatts) measured at the output port.
         """
-        return None
+        return (0, 0, 0)

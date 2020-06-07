@@ -17,4 +17,4 @@ class Buttons:
         Returns:
         List of pressed buttons.
         """
-        return None
+        return []

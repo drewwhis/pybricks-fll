@@ -23,12 +23,12 @@ class Image:
         Additional keyword arguments x1, y1, x2, y2 are needed when sub=True. These specify the top-left and bottom-right coordinates in the source image that will be used as the bounds for the sub-image.
     """
 
-    def __init__(self, source: Union[Image, str], sub: bool = False, x1: int = None, y1: int = None, x2: int = None, y2: int = None):
+    def __init__(self, source: Union['Image', str], sub: bool = False, x1: int = None, y1: int = None, x2: int = None, y2: int = None):
         self.width = 178  # type: int
         self.height = 128  # type: int
 
     @staticmethod
-    def empty(width: int = 178, height: int = 128) -> Image:
+    def empty(width: int = 178, height: int = 128) -> 'Image':
         """
         Creates a new empty Image object.
 
@@ -89,7 +89,7 @@ class Image:
         """
         ...
 
-    def draw_image(self, x: int, y: int, source: Union[str, Image], transparent: Color = None):
+    def draw_image(self, x: int, y: int, source: Union[str, 'Image'], transparent: Color = None):
         """
         Draws the source image on this image.
 
@@ -160,7 +160,7 @@ class Image:
         """
         ...
 
-    def load_image(self, source: Union[Image, str]):
+    def load_image(self, source: Union['Image', str]):
         """
         Clears this image, then draws the source image centered in this image.
 
