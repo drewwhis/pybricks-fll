@@ -49,4 +49,4 @@ class Font:
 
         return 0
 
-Font.DEFAULT = Font()
+Font.DEFAULT = Font('Lucida', 12)

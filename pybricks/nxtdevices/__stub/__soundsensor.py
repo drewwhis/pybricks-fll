@@ -22,4 +22,4 @@ class SoundSensor:
         Returns:
             Sound intensity as a percentage (0 to 100).
         """
-        return False
+        return 0

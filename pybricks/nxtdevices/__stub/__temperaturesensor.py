@@ -17,6 +17,6 @@ class TemperatureSensor:
         Measures the temperature.
 
         Returns:
-            Measured temperature in degree Celsius.
+            Measured temperature in degrees Celsius.
         """
         return 0

@@ -10,7 +10,6 @@ class UltrasonicSensor:
     """
 
     def __init__(self, port: Port):
-
         ...
 
     def distance(self, silent: bool = False) -> int:
