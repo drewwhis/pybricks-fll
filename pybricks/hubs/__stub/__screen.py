@@ -48,7 +48,7 @@ class Screen:
         Unlike the builtin print(), the text does not wrap if it is too wide to fit on the screen. It just gets cut off. But if the text would go off of the bottom of the screen, the entire image is scrolled up and the text is printed in the new blank area at the bottom of the screen.
 
         Args:
-            *args (object): Zero or more objects to print.
+            args (object): Zero or more objects to print.
             sep (str): Separator that will be placed between each object that is printed.
             end (str): End of line that will be printed after the last object.
         """

@@ -26,7 +26,7 @@ class Mailbox:
         Returns:
             The current value or None if the mailbox is empty.
         """
-        return None
+        return ''
 
     def send(self, value: any, brick: str):
         """
@@ -54,4 +54,4 @@ class Mailbox:
         Returns:
             The new value.
         """
-        return None
+        return ''
