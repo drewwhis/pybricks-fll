@@ -1,6 +1,6 @@
 from unittest import TestCase
-
 from pybricks.__stub.__control import Control
+
 
 class TestControl(TestCase):
     def test_scale_is_float(self):
@@ -49,7 +49,7 @@ class TestControl(TestCase):
 
         result = control.pid(0)
         self.assertIsNone(result)
-        
+
         result = control.pid(0, 0)
         self.assertIsNone(result)
 
@@ -89,7 +89,7 @@ class TestControl(TestCase):
 
         result = control.target_tolerances(0)
         self.assertIsNone(result)
-        
+
         result = control.target_tolerances(0, 0)
         self.assertIsNone(result)
 
@@ -109,7 +109,7 @@ class TestControl(TestCase):
 
         result = control.stall_tolerances(0)
         self.assertIsNone(result)
-        
+
         result = control.stall_tolerances(0, 0)
         self.assertIsNone(result)
 
