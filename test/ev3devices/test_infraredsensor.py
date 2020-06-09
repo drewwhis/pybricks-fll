@@ -9,7 +9,7 @@ class TestInfraredSensor(TestCase):
         self.assertRaises(ValueError, InfraredSensor, Port.B)
         self.assertRaises(ValueError, InfraredSensor, Port.C)
         self.assertRaises(ValueError, InfraredSensor, Port.D)
-        
+
         try:
             InfraredSensor(Port.S1)
             InfraredSensor(Port.S2)
@@ -41,4 +41,3 @@ class TestInfraredSensor(TestCase):
         sensor = InfraredSensor(Port.S1)
         result = sensor.keypad()
         self.assertTrue(isinstance(result, list))
-
