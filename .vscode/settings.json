@@ -12,6 +12,7 @@
 		"cdevice",
 		"dcmotor",
 		"devsensor",
+		"iodevices",
 		"milliamps",
 		"milliwatts",
 		"pybricks",
