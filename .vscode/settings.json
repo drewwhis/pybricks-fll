@@ -17,6 +17,7 @@
 		"milliwatts",
 		"nxtdevices",
 		"pybricks",
+		"pytest",
 		"sysfs",
 		"uartdevice",
 		"whisperf",
