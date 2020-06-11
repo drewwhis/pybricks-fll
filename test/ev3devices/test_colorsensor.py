@@ -22,25 +22,25 @@ class TestColorSensor(TestCase):
     def test_color(self):
         sensor = ColorSensor(Port.S1)
         result = sensor.color()
-        self.assertTrue(isinstance(result, Color))
+        self.assertIsInstance(result, Color)
         self.assertEqual(Color.BLACK, result)
 
     def test_ambient(self):
         sensor = ColorSensor(Port.S1)
         result = sensor.ambient()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_reflection(self):
         sensor = ColorSensor(Port.S1)
         result = sensor.reflection()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_rgb(self):
         sensor = ColorSensor(Port.S1)
         result = sensor.rgb()
-        self.assertTrue(isinstance(result, tuple))
+        self.assertIsInstance(result, tuple)
         self.assertEqual(3, len(result))
         self.assertEqual(0, result[0])
         self.assertEqual(0, result[1])

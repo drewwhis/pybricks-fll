@@ -17,27 +17,27 @@ class TestFont(TestCase):
 
     def test_default(self):
         self.assertIsNotNone(Font.DEFAULT)
-        self.assertTrue(isinstance(Font.DEFAULT, Font))
+        self.assertIsInstance(Font.DEFAULT, Font)
 
     def test_properties(self):
         font = Font('a', 24, True, True, 'b', 'c')
-        self.assertTrue(isinstance(font.family, str))
+        self.assertIsInstance(font.family, str)
         self.assertEqual(font.family, '')
-        self.assertTrue(isinstance(font.style, str))
+        self.assertIsInstance(font.style, str)
         self.assertEqual(font.style, '')
-        self.assertTrue(isinstance(font.width, int))
+        self.assertIsInstance(font.width, int)
         self.assertEqual(font.width, 0)
-        self.assertTrue(isinstance(font.height, int))
+        self.assertIsInstance(font.height, int)
         self.assertEqual(font.height, 0)
 
     def test_text_width(self):
         font = Font()
         result = font.text_width('test')
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(result, 0)
 
     def test_text_height(self):
         font = Font()
         result = font.text_height('test')
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(result, 0)

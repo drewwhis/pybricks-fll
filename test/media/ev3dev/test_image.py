@@ -23,20 +23,20 @@ class TestImage(TestCase):
 
     def test_properties(self):
         image = Image('test')
-        self.assertTrue(isinstance(image.width, int))
-        self.assertTrue(isinstance(image.height, int))
+        self.assertIsInstance(image.width, int)
+        self.assertIsInstance(image.height, int)
         self.assertEqual(image.width, 0)
         self.assertEqual(image.height, 0)
 
     def test_empty(self):
         result = Image.empty()
-        self.assertTrue(isinstance(result, Image))
+        self.assertIsInstance(result, Image)
 
         result = Image.empty(178)
-        self.assertTrue(isinstance(result, Image))
+        self.assertIsInstance(result, Image)
 
         result = Image.empty(178, 128)
-        self.assertTrue(isinstance(result, Image))
+        self.assertIsInstance(result, Image)
 
     def test_draw_text(self):
         image = Image('test')

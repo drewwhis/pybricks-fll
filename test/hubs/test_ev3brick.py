@@ -17,19 +17,19 @@ class TestEV3Brick(TestCase):
     def test_battery_voltage(self):
         brick = EV3Brick()
         value = brick.battery.voltage()
-        self.assertTrue(isinstance(value, int))
+        self.assertIsInstance(value, int)
         self.assertEqual(0, value)
 
     def test_battery_current(self):
         brick = EV3Brick()
         value = brick.battery.current()
-        self.assertTrue(isinstance(value, int))
+        self.assertIsInstance(value, int)
         self.assertEqual(0, value)
 
     def test_buttons_pressed(self):
         brick = EV3Brick()
         value = brick.buttons.pressed()
-        self.assertTrue(isinstance(value, list))
+        self.assertIsInstance(value, list)
         self.assertEqual(0, len(value))
 
     def test_light_on(self):

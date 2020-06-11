@@ -21,17 +21,17 @@ class TestEv3devSensor(TestCase):
     def test_sensor_index(self):
         sensor = Ev3devSensor(Port.S1)
         result = sensor.sensor_index
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_port_index(self):
         sensor = Ev3devSensor(Port.S1)
         result = sensor.port_index
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_read(self):
         sensor = Ev3devSensor(Port.S1)
         result = sensor.read('mode')
-        self.assertTrue(isinstance(result, tuple))
+        self.assertIsInstance(result, tuple)
         self.assertEqual(0, len(result))

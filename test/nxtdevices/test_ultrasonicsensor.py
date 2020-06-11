@@ -21,5 +21,5 @@ class TestUltrasonicSensor(TestCase):
     def test_distance(self):
         sensor = UltrasonicSensor(Port.S1)
         result = sensor.distance()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)

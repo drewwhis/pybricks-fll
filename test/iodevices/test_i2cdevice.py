@@ -21,7 +21,7 @@ class TestI2CDevice(TestCase):
     def test_read(self):
         sensor = I2CDevice(Port.S1, 0)
         result = sensor.read(0, 0)
-        self.assertTrue(isinstance(result, bytes))
+        self.assertIsInstance(result, bytes)
         self.assertEqual(bytes.fromhex('00'), result)
 
     def test_write(self):

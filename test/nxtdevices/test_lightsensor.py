@@ -21,11 +21,11 @@ class TestLightSensor(TestCase):
     def test_ambient(self):
         sensor = LightSensor(Port.S1)
         result = sensor.ambient()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_reflection(self):
         sensor = LightSensor(Port.S1)
         result = sensor.reflection()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)

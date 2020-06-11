@@ -21,17 +21,17 @@ class TestUARTDevice(TestCase):
     def test_read(self):
         sensor = UARTDevice(Port.S1, 0, 0)
         result = sensor.read()
-        self.assertTrue(isinstance(result, bytes))
+        self.assertIsInstance(result, bytes)
         self.assertEqual(bytes.fromhex('00'), result)
 
         result = sensor.read(10)
-        self.assertTrue(isinstance(result, bytes))
+        self.assertIsInstance(result, bytes)
         self.assertEqual(bytes.fromhex('00'), result)
 
     def test_read_all(self):
         sensor = UARTDevice(Port.S1, 0, 0)
         result = sensor.read_all()
-        self.assertTrue(isinstance(result, bytes))
+        self.assertIsInstance(result, bytes)
         self.assertEqual(bytes.fromhex('00'), result)
 
     def test_write(self):
@@ -41,7 +41,7 @@ class TestUARTDevice(TestCase):
     def test_waiting(self):
         sensor = UARTDevice(Port.S1, 0, 0)
         result = sensor.waiting()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_clear(self):

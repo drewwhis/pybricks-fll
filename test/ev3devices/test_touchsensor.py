@@ -21,5 +21,5 @@ class TestTouchSensor(TestCase):
     def test_pressed(self):
         sensor = TouchSensor(Port.S1)
         value = sensor.pressed()
-        self.assertTrue(isinstance(value, bool))
+        self.assertIsInstance(value, bool)
         self.assertFalse(value)

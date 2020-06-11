@@ -29,17 +29,17 @@ class TestVernierAdapter(TestCase):
     def test_voltage(self):
         sensor = VernierAdapter(Port.S1)
         result = sensor.voltage()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(result, 0)
 
     def test_conversion(self):
         sensor = VernierAdapter(Port.S1)
         result = sensor.conversion(0)
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(result, 0)
 
     def test_value(self):
         sensor = VernierAdapter(Port.S1)
         result = sensor.value()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(result, 0)

@@ -12,7 +12,7 @@ class TestNumericMailbox(TestCase):
 
     def test_read(self):
         box = NumericMailbox('name', BluetoothMailboxClient())
-        self.assertTrue(isinstance(box.read(), int))
+        self.assertIsInstance(box.read(), int)
         self.assertEqual(box.read(), 0)
 
     def test_send(self):
@@ -26,5 +26,5 @@ class TestNumericMailbox(TestCase):
 
     def test_wait_new(self):
         box = NumericMailbox('name', BluetoothMailboxClient())
-        self.assertTrue(isinstance(box.wait_new(), int))
+        self.assertIsInstance(box.wait_new(), int)
         self.assertEqual(box.wait_new(), 0)

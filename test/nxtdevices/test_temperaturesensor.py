@@ -21,5 +21,5 @@ class TestTemperatureSensor(TestCase):
     def test_temperature(self):
         sensor = TemperatureSensor(Port.S1)
         result = sensor.temperature()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)

@@ -21,13 +21,13 @@ class TestAnalogSensor(TestCase):
     def test_voltage(self):
         sensor = AnalogSensor(Port.S1)
         result = sensor.voltage()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_resistance(self):
         sensor = AnalogSensor(Port.S1)
         result = sensor.resistance()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_active(self):

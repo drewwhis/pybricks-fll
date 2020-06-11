@@ -12,7 +12,7 @@ class TestLogicMailbox(TestCase):
 
     def test_read(self):
         box = LogicMailbox('name', BluetoothMailboxClient())
-        self.assertTrue(isinstance(box.read(), bool))
+        self.assertIsInstance(box.read(), bool)
         self.assertFalse(box.read())
 
     def test_send(self):
@@ -25,5 +25,5 @@ class TestLogicMailbox(TestCase):
 
     def test_wait_new(self):
         box = LogicMailbox('name', BluetoothMailboxClient())
-        self.assertTrue(isinstance(box.wait_new(), bool))
+        self.assertIsInstance(box.wait_new(), bool)
         self.assertFalse(box.wait_new())

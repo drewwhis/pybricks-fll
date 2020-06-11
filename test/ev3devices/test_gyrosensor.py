@@ -28,13 +28,13 @@ class TestGyroSensor(TestCase):
     def test_speed(self):
         sensor = GyroSensor(Port.S1)
         value = sensor.speed()
-        self.assertTrue(isinstance(value, int))
+        self.assertIsInstance(value, int)
         self.assertEqual(0, value)
 
     def test_angle(self):
         sensor = GyroSensor(Port.S1)
         value = sensor.angle()
-        self.assertTrue(isinstance(value, int))
+        self.assertIsInstance(value, int)
         self.assertEqual(0, value)
 
     def test_reset_angle(self):

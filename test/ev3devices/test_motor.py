@@ -29,13 +29,13 @@ class TestMotor(TestCase):
     def test_speed(self):
         motor = Motor(Port.A)
         result = motor.speed()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_angle(self):
         motor = Motor(Port.A)
         result = motor.angle()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_reset_angle(self):
@@ -80,15 +80,15 @@ class TestMotor(TestCase):
         motor = Motor(Port.A)
 
         result = motor.run_until_stalled(100)
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
         result = motor.run_until_stalled(100, Stop.HOLD)
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
         result = motor.run_until_stalled(100, Stop.HOLD, 50)
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_dc(self):

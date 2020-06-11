@@ -21,13 +21,13 @@ class TestInfraredSensor(TestCase):
     def test_distance(self):
         sensor = InfraredSensor(Port.S1)
         result = sensor.distance()
-        self.assertTrue(isinstance(result, int))
+        self.assertIsInstance(result, int)
         self.assertEqual(0, result)
 
     def test_beacon(self):
         sensor = InfraredSensor(Port.S1)
         result = sensor.beacon(0)
-        self.assertTrue(isinstance(result, tuple))
+        self.assertIsInstance(result, tuple)
         self.assertEqual(2, len(result))
         self.assertEqual(0, result[0])
         self.assertEqual(0, result[1])
@@ -35,9 +35,9 @@ class TestInfraredSensor(TestCase):
     def test_buttons(self):
         sensor = InfraredSensor(Port.S1)
         result = sensor.buttons(0)
-        self.assertTrue(isinstance(result, list))
+        self.assertIsInstance(result, list)
 
     def test_keypad(self):
         sensor = InfraredSensor(Port.S1)
         result = sensor.keypad()
-        self.assertTrue(isinstance(result, list))
+        self.assertIsInstance(result, list)

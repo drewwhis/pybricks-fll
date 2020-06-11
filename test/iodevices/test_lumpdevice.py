@@ -21,7 +21,7 @@ class TestLUMPDevice(TestCase):
     def test_read(self):
         sensor = LUMPDevice(Port.S1)
         result = sensor.read(0)
-        self.assertTrue(isinstance(result, tuple))
+        self.assertIsInstance(result, tuple)
         self.assertEqual(0, len(result))
 
     def test_write(self):
