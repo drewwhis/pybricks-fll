@@ -21,7 +21,7 @@ class ColorSensor:
         Returns:
             Color.BLACK, Color.BLUE, Color.GREEN, Color.YELLOW, Color.RED, Color.WHITE Color.BROWN, or None if no color is detected.
         """
-        return None
+        return Color.BLACK
 
     def ambient(self) -> int:
         """

@@ -15,6 +15,7 @@
 		"iodevices",
 		"milliamps",
 		"milliwatts",
+		"nxtdevices",
 		"pybricks",
 		"sysfs",
 		"uartdevice",
