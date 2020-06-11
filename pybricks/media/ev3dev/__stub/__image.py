@@ -2,7 +2,7 @@ from pybricks.media.ev3dev import Font, ImageFile
 from pybricks.parameters import Color
 from typing import Union
 
-
+empty = None
 class Image:
     """
     Object representing a graphics image. This can either be an in-memory copy of an image or the image displayed on a screen.
@@ -22,7 +22,6 @@ class Image:
 
         Additional keyword arguments x1, y1, x2, y2 are needed when sub=True. These specify the top-left and bottom-right coordinates in the source image that will be used as the bounds for the sub-image.
     """
-    _empty = None  # type: Image
 
     def __init__(self, source: Union['Image', str, ImageFile], *, sub: bool = False, x1: int = None, y1: int = None, x2: int = None, y2: int = None):
         self.width = 0  # type: int
@@ -45,7 +44,7 @@ class Image:
             ValueError: width or height is less than 1.
             RuntimeError: There was a problem allocating a new image.
         """
-        return Image._empty
+        return empty
 
     def draw_text(self, x: int, y: int, text: str, text_color: Color = Color.BLACK, background_color: Color = None):
         """
@@ -183,4 +182,4 @@ class Image:
         """
         ...
 
-Image._empty = Image('empty')
+empty = Image('empty')
